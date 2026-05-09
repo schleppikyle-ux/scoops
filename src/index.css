@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka One", cursive;
+  
+  --color-brand-pink: #FF85A1;
+  --color-brand-red: #FF6B6B;
+  --color-brand-teal: #4ECDC4;
+  --color-brand-yellow: #FFE66D;
+  --color-brand-brown: #4A2C2A;
+  --color-brand-cream: #FFF9F2;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-brand-cream text-brand-brown antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-wide;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
