@@ -16,8 +16,18 @@ export default function Footer() {
               Spreading joy one scoop at a time. Groveport's favorite destination for sweet moments and family fun.
             </p>
             <div className="flex gap-4">
-              {[Instagram, Facebook, Twitter].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-xl bg-brand-cream flex items-center justify-center text-brand-brown hover:bg-brand-pink hover:text-white transition-all shadow-sm">
+              {[
+                { Icon: Instagram, url: 'https://www.instagram.com/scoopswithsmiles/' },
+                { Icon: Facebook, url: 'https://www.facebook.com/scoopswithsmiles' },
+                { Icon: Twitter, url: '#' }
+              ].map(({ Icon, url }, i) => (
+                <a 
+                  key={i} 
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-xl bg-brand-cream flex items-center justify-center text-brand-brown hover:bg-brand-pink hover:text-white transition-all shadow-sm"
+                >
                   <Icon size={18} />
                 </a>
               ))}
